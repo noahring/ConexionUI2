@@ -8,7 +8,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage stage) throws Exception {
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(Main.class.getResource("../View/navBar.fxml"));
+		loader.setLocation(Main.class.getResource("View/navBar.fxml"));
 		
 		BorderPane view = loader.load();
 		
