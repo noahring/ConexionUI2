@@ -25,5 +25,4 @@ public class Employer {
 		this.jobs = jobs;
 	}	
 	
-	
 }

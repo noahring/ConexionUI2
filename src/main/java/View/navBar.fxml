@@ -13,13 +13,13 @@
          <children>
             <ButtonBar prefHeight="40.0" prefWidth="200.0">
               <buttons>
-                  <Button mnemonicParsing="false" text="Home" />
-                <Button mnemonicParsing="false" text="My Profile" />
-                  <Button mnemonicParsing="false" text="Jobs" />
-                  <Button mnemonicParsing="false" text="Employers" />
-                  <Button mnemonicParsing="false" text="Users" />
-                  <Button mnemonicParsing="false" text="Skills" />
-                  <Button mnemonicParsing="false" text="Posts" />
+                  <Button mnemonicParsing="false" onAction="#onClickHome" text="Home" />
+                <Button mnemonicParsing="false" onAction="#onClickMyProfile" text="My Profile" />
+                  <Button mnemonicParsing="false" onAction="#onClickJobs" text="Jobs" />
+                  <Button mnemonicParsing="false" onAction="#onClickEmployers" text="Employers" />
+                  <Button mnemonicParsing="false" onAction="#onClickUsers" text="Users" />
+                  <Button mnemonicParsing="false" onAction="#onClickSkills" text="Skills" />
+                  <Button mnemonicParsing="false" onAction="#onClickPosts" text="Posts" />
               </buttons>
             </ButtonBar>
          </children>
