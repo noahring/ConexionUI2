@@ -56,17 +56,19 @@ public class privateProfileController {
     
     @FXML
     void onClickEditButton(ActionEvent event) {
-
-    	if (viewModel != null) {
-            viewModel.changetoEditView(); // Call changetoEditView() on the viewModel instance
-        } else {
-            System.err.println("ViewModel is not initialized.");
-        }
+    	viewModel.changetoEditView();
+//    	if (viewModel != null) {
+//             // Call changetoEditView() on the viewModel instance
+//    		break;
+//        } else {
+//            System.err.println("ViewModel is not initialized.");
+//        }
     
     }
 
     @FXML
     void onClickSignOut(ActionEvent event) {
+    	viewModel.changetoLoginView();
 //    	model.changetoLoginView();
 
     }

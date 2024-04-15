@@ -1,6 +1,7 @@
 package models;
 
 import java.io.IOException;
+import java.net.URL;
 
 import View.AllEmployersViewController;
 import View.AllJobsViewController;
@@ -10,16 +11,17 @@ import View.privateProfileController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 
 public class ViewTransitionalModel implements ViewTransitionModelInterface {
 	
 	
 	BorderPane  mainview;
 	allPagesModel model;
-	
 	public ViewTransitionalModel(BorderPane view, allPagesModel newModel) {
 		mainview = view;
 		model = newModel;
+		
 	}
 
 	
@@ -112,11 +114,12 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 			mainview.setCenter(view);
 			privateProfileController cont = loader.getController();
 			cont.setModel(model);
+			cont.setViewModel(this);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 
@@ -130,13 +133,17 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 	@Override
 	public void changetoEditView() {
 		// TODO Auto-generated method stub
+		//System.out.println("reached");
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(ViewTransitionalModel.class.getResource("../View/editProfile.fxml"));
+		URL url = loader.getLocation();
+		System.out.println(url);
+		//loader.setLocation(ViewTransitionalModel.class.getResource("../View/Login.fxml"));
 		try {
 			Node view = loader.load();
 			mainview.setCenter(view);
 			privateProfileController cont = loader.getController();
-			cont.setEditProfileModel(model);
+			cont.setViewModel(this);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -149,10 +156,20 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 	public void changetoLoginView() {
 		// TODO Auto-generated method stub
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(ViewTransitionalModel.class.getResource("../View/Login.fxml"));
+		//loader.setLocation(ViewTransitionalModel.class.getResource("../View/editProfile.fxml"));
+		loader.setLocation(ViewTransitionalModel.class.getResource("../View/login.fxml"));
+		URL url = loader.getLocation();
+		System.out.println(url);
 		try {
+			
 			Node view = loader.load();
+			//System.out.println("reached1");
 			mainview.setCenter(view);
+			
+			privateProfileController cont = loader.getController();
+			//System.out.println("reached");
+			cont.setViewModel(this);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
