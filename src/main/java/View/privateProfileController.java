@@ -11,9 +11,9 @@ import models.allPagesModel;
 
 public class privateProfileController {
 	
-	allPagesModel model;
+	ViewTransitionModelInterface model;
 	
-	public void setModel(allPagesModel newModel) {
+	public void setModel(ViewTransitionModelInterface newModel) {
 		
 		model = newModel;
 	}

@@ -11,6 +11,9 @@ public interface ViewTransitionModelInterface {
 	public void showAllPosts();
 	public void showProfile();
 	
+	//Edit Pages 
 	
+	public void changetoEditView();
+	public void changetoLoginView();
 
 }

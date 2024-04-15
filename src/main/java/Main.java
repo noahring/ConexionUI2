@@ -16,7 +16,6 @@ public class Main extends Application {
 		
 		MainController cont = loader.getController();
 		
-		allPagesModel model = new allPagesModel();
 		ViewTransitionalModel vm = new ViewTransitionalModel(view, model);
 		cont.setModel(vm);
 		

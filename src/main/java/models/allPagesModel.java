@@ -1,7 +1,12 @@
 package models;
 
+import java.io.IOException;
+
+import View.privateProfileController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 
 public class allPagesModel {
 	ObservableList<User> users = FXCollections.observableArrayList();
@@ -53,4 +58,34 @@ public class allPagesModel {
 		this.jobPosts.add(newJob);
 		postAuthor.jobs.add(newJob);
 	}
+	
+//	public void changetoEditView() {
+//		// TODO Auto-generated method stub
+//		FXMLLoader loader = new FXMLLoader();
+//		loader.setLocation(ViewTransitionalModel.class.getResource("../View/editProfile.fxml"));
+//		try {
+//			Node view = loader.load();
+//			mainview.setCenter(view);
+//			privateProfileController cont = loader.getController();
+//			cont.setModel(model);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//	}
+//
+//	public void changetoLoginView() {
+//		// TODO Auto-generated method stub
+//		FXMLLoader loader = new FXMLLoader();
+//		loader.setLocation(ViewTransitionalModel.class.getResource("../View/Login.fxml"));
+//		try {
+//			Node view = loader.load();
+//			mainview.setCenter(view);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//	}
 }
