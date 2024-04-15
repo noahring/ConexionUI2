@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
-//import models.ViewTransitionModelInterface;
+import models.ViewTransitionalModel;
 import models.allPagesModel;
 import models.Skill;
 import models.Post;
@@ -15,6 +15,7 @@ import models.Post;
 public class privateProfileController {
 	
 	allPagesModel model;
+	ViewTransitionalModel viewModel;
 	
 	public void setModel(allPagesModel model) {
 		
@@ -44,17 +45,30 @@ public class privateProfileController {
     @FXML
     private Button signOut;
 
+    public void setEditProfileModel(allPagesModel model) {
+        this.model = model;
+    }
+    
+    public void setViewModel(ViewTransitionalModel viewModel)
+    {
+    	this.viewModel = viewModel;
+    }
+    
     @FXML
     void onClickEditButton(ActionEvent event) {
-//    	System.out.println("EditProfile Clicked! Implementation WIP!");
-//    	model.changetoEditView();
+
+    	if (viewModel != null) {
+            viewModel.changetoEditView(); // Call changetoEditView() on the viewModel instance
+        } else {
+            System.err.println("ViewModel is not initialized.");
+        }
     
     }
 
     @FXML
     void onClickSignOut(ActionEvent event) {
 //    	model.changetoLoginView();
-//    	System.out.println("Login Again!");
+
     }
 
 }
