@@ -7,6 +7,7 @@ public class AllSkillsViewController {
 	allPagesModel model;
 	public void setModel(allPagesModel model) {
 		this.model = model;
+		System.out.println("reached");
 		allSkillsList.setItems(model.getSkills());
 	}
     @FXML

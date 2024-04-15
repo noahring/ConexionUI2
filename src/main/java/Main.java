@@ -10,6 +10,9 @@ public class Main extends Application {
 	allPagesModel model = new allPagesModel();
 	@Override
 	public void start(Stage stage) throws Exception {
+		model.addSkill("Python");
+		model.addSkill("Java");
+		System.out.println(model.getSkills());
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("View/navBar.fxml"));
 		BorderPane view = loader.load();

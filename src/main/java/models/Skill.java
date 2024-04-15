@@ -10,4 +10,9 @@ public class Skill {
 	public Skill(String skillName) {
 		this.skillName = skillName;
 	}
+
+	@Override
+	public String toString() {
+		return skillName;
+	}
 }
