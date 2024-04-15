@@ -39,5 +39,13 @@ public class Job {
 	public void addSkill(Skill skill) {
 		this.skills.add(skill);
 	}
+
+	@Override
+	public String toString()
+	{
+		return jobTitle ;
+	}
+	
+	
 	
 }
