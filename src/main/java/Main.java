@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 import models.ViewTransitionalModel;
 import models.allPagesModel;
 public class Main extends Application {
-
+	allPagesModel model = new allPagesModel();
 	@Override
 	public void start(Stage stage) throws Exception {
 		FXMLLoader loader = new FXMLLoader();
