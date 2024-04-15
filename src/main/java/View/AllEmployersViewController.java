@@ -1,14 +1,16 @@
 package View;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
-import models.Skill;
+import models.Employer;
 import models.allPagesModel;
-public class AllSkillsViewController {
+
+public class AllEmployersViewController {
 	allPagesModel model;
 	public void setModel(allPagesModel model) {
 		this.model = model;
-		allSkillsList.setItems(model.getSkills());
+		allEmployersList.setItems(model.getEmployers());
 	}
     @FXML
-    private ListView<Skill> allSkillsList;
+    private ListView<Employer> allEmployersList;
 }

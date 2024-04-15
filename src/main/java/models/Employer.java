@@ -4,6 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Employer {
+	@Override
+	public String toString() {
+		return employerName;
+	}
 	String employerName;
 	ObservableList<Job> jobs = FXCollections.observableArrayList();
 	public Employer(String employerName) {

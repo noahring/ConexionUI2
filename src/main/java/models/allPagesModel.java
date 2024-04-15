@@ -44,6 +44,11 @@ public class allPagesModel {
 		User newUser = new User(username, password);
 		this.users.add(newUser);
 	}
+	public void addEmployer(String username) {
+		Employer newUser = new Employer(username);
+		this.employers.add(newUser);
+		System.out.print(employers);
+	}
 	public void addSkill(String skillname) {
 		Skill newSkill = new Skill(skillname);
 		this.skills.add(newSkill);

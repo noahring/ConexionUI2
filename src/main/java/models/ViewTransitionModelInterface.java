@@ -4,7 +4,7 @@ public interface ViewTransitionModelInterface {
 	
 	// View Pages
 	public void showHome();
-	public void showAllEmployer();
+	public void showAllEmployers();
 	public void showAllJobs();
 	public void showAllUsers();
 	public void showAllSkills();

@@ -4,6 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class User {
+	@Override
+	public String toString() {
+		return username;
+	}
+
 	String username;
 	String password;
 	ObservableList<Skill> skills = FXCollections.observableArrayList();

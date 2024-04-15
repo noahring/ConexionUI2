@@ -2,7 +2,9 @@ package models;
 
 import java.io.IOException;
 
+import View.AllEmployersViewController;
 import View.AllSkillsViewController;
+import View.AllUsersViewController;
 import View.privateProfileController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,7 +30,7 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 	}
 
 	@Override
-	public void showAllEmployer() {
+	public void showAllEmployers() {
 		// TODO Auto-generated method stub
 
 		FXMLLoader loader = new FXMLLoader();
@@ -36,6 +38,8 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 		try {
 			Node view = loader.load();
 			mainview.setCenter(view);
+			AllEmployersViewController cont = loader.getController();
+			cont.setModel(model);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,6 +70,9 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 		try {
 			Node view = loader.load();
 			mainview.setCenter(view);
+			AllUsersViewController cont = loader.getController();
+			cont.setModel(model);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -14,7 +14,7 @@ public class MainController {
 
     @FXML
     void onClickEmployers(ActionEvent event) {
-    	model.showAllEmployer();
+    	model.showAllEmployers();
     	System.out.println("clicked employers");
 
     }
