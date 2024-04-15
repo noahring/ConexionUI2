@@ -2,7 +2,11 @@ package models;
 
 import java.io.IOException;
 
+<<<<<<< HEAD
 import View.AllEmployersViewController;
+=======
+import View.AllJobsViewController;
+>>>>>>> eb241606939ae54f982837f5a224a7b9ae972c5f
 import View.AllSkillsViewController;
 import View.AllUsersViewController;
 import View.privateProfileController;
@@ -55,6 +59,8 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 		try {
 			Node view = loader.load();
 			mainview.setCenter(view);
+			AllJobsViewController cont = loader.getController();
+			cont.setModel(model);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
