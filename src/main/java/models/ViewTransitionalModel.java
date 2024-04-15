@@ -1,6 +1,8 @@
 package models;
 
 import java.io.IOException;
+
+import View.AllSkillsViewController;
 import View.privateProfileController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -79,6 +81,8 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 		try {
 			Node view = loader.load();
 			mainview.setCenter(view);
+			AllSkillsViewController cont = loader.getController();
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
