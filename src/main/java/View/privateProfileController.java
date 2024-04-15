@@ -7,12 +7,13 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import models.ViewTransitionModelInterface;
+import models.allPagesModel;
 
 public class privateProfileController {
 	
-	ViewTransitionModelInterface model;
+	allPagesModel model;
 	
-	public void setModel(ViewTransitionModelInterface newModel) {
+	public void setModel(allPagesModel newModel) {
 		
 		model = newModel;
 	}

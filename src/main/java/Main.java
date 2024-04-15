@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import models.ViewTransitionalModel;
+import models.allPagesModel;
 public class Main extends Application {
 
 	@Override
@@ -15,7 +16,8 @@ public class Main extends Application {
 		
 		MainController cont = loader.getController();
 		
-		ViewTransitionalModel vm = new ViewTransitionalModel(view);
+		allPagesModel model = new allPagesModel();
+		ViewTransitionalModel vm = new ViewTransitionalModel(view, model);
 		cont.setModel(vm);
 		
 		

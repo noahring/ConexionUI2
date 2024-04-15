@@ -1,7 +1,7 @@
 package models;
 
 import java.io.IOException;
-
+import View.privateProfileController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
@@ -10,9 +10,11 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 	
 	
 	BorderPane  mainview;
+	allPagesModel model;
 	
-	public ViewTransitionalModel(BorderPane view) {
+	public ViewTransitionalModel(BorderPane view, allPagesModel newModel) {
 		mainview = view;
+		model = newModel;
 	}
 
 	
@@ -108,35 +110,6 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 	}
 
 
-	@Override
-	public void changetoEditView() {
-		// TODO Auto-generated method stub
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(ViewTransitionalModel.class.getResource("../View/editProfile.fxml"));
-		try {
-			Node view = loader.load();
-			mainview.setCenter(view);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
-
-
-	@Override
-	public void changetoLoginView() {
-		// TODO Auto-generated method stub
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(ViewTransitionalModel.class.getResource("../View/Login.fxml"));
-		try {
-			Node view = loader.load();
-			mainview.setCenter(view);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
+	
 
 }
