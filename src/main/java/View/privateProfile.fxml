@@ -11,16 +11,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.privateProfileController">
    <left>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Name" textAlignment="CENTER">
+            <Label fx:id="profileName" text="Name" textAlignment="CENTER">
                <font>
                   <Font name="Courier New" size="24.0" />
                </font>
             </Label>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A user's BIo will appear here if one has been written" wrappingWidth="146.373046875">
+            <Text fx:id="profileBio" strokeType="OUTSIDE" strokeWidth="0.0" text="A user's BIo will appear here if one has been written" wrappingWidth="146.373046875">
                <font>
                   <Font name="Courier New" size="12.0" />
                </font>
@@ -30,7 +30,7 @@
                   <Font name="Courier New" size="18.0" />
                </font>
             </Label>
-            <ListView prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="profileSkills" prefHeight="200.0" prefWidth="200.0" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -45,7 +45,7 @@
                   <Font name="Courier New" size="16.0" />
                </font>
             </Label>
-            <ListView prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="profileRecentPost" prefHeight="200.0" prefWidth="200.0" />
          </children>
          <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -59,8 +59,8 @@
                <children>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0">
                     <buttons>
-                      <Button mnemonicParsing="false" text="Edit" />
-                        <Button mnemonicParsing="false" text="Sign Out" />
+                      <Button fx:id="editPrivateProfile" mnemonicParsing="false" onAction="#onClickEditButton" text="Edit" />
+                        <Button fx:id="signOut" mnemonicParsing="false" onAction="#onClickSignOut" text="Sign Out" />
                     </buttons>
                   </ButtonBar>
                </children>

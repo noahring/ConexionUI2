@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import models.ViewTransitionalModel;
+import models.PrivateProfileTransitionModel;
 public class Main extends Application {
 
 	@Override
@@ -17,6 +18,9 @@ public class Main extends Application {
 		
 		ViewTransitionalModel vm = new ViewTransitionalModel(view);
 		cont.setModel(vm);
+		
+		PrivateProfileTransitionModel ppm = new PrivateProfileTransitionModel(view);
+		cont.setModel(ppm);
 		
 		
 		Scene s = new Scene(view);
