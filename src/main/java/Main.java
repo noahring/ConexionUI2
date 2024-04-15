@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import models.Employer;
 import models.ViewTransitionalModel;
 import models.allPagesModel;
 public class Main extends Application {
@@ -34,7 +35,9 @@ public class Main extends Application {
 		model.addUser("Noah", "From the Southeastern U.S.");
 		model.addUser("Johnson", "an unusual man");
 		
-		model.addEmployer("Acme");
+		Employer Acme = model.addEmployer("Acme");
+		
+		model.addJob("matress tester", "sleep", Acme);
 	}
 	public static void main(String [] args){
 		launch(args);
