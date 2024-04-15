@@ -110,6 +110,8 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 		try {
 			Node view = loader.load();
 			mainview.setCenter(view);
+			privateProfileController cont = loader.getController();
+			cont.setModel(model);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -6,16 +6,24 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
-import models.ViewTransitionModelInterface;
+//import models.ViewTransitionModelInterface;
 import models.allPagesModel;
+import models.Skill;
+import models.Post;
+
 
 public class privateProfileController {
 	
-	ViewTransitionModelInterface model;
+	allPagesModel model;
 	
-	public void setModel(ViewTransitionModelInterface newModel) {
+	public void setModel(allPagesModel model) {
 		
-		model = newModel;
+		this.model = model;
+		profileSkills.setItems(model.getSkills());
+		profileRecentPost.setItems(model.getPosts());
+		profileName.setText("Johnson");
+		profileBio.setText("I love computer science");
+		
 	}
 
     @FXML
@@ -28,25 +36,25 @@ public class privateProfileController {
     private Label profileName;
 
     @FXML
-    private ListView<?> profileRecentPost;
+    private ListView<Post> profileRecentPost;
 
     @FXML
-    private ListView<?> profileSkills;
+    private ListView<Skill> profileSkills;
 
     @FXML
     private Button signOut;
 
     @FXML
     void onClickEditButton(ActionEvent event) {
-    	System.out.println("EditProfile Clicked! Implementation WIP!");
-    	model.changetoEditView();
+//    	System.out.println("EditProfile Clicked! Implementation WIP!");
+//    	model.changetoEditView();
     
     }
 
     @FXML
     void onClickSignOut(ActionEvent event) {
-    	model.changetoLoginView();
-    	System.out.println("Login Again!");
+//    	model.changetoLoginView();
+//    	System.out.println("Login Again!");
     }
 
 }

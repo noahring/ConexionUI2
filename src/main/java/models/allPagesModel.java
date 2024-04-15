@@ -1,12 +1,11 @@
 package models;
 
-import java.io.IOException;
 
-import View.privateProfileController;
+
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+
 
 public class allPagesModel {
 	ObservableList<User> users = FXCollections.observableArrayList();
@@ -40,14 +39,15 @@ public class allPagesModel {
 	}
 	
 	//adders
-	public void addUser(String username, String password) {
+	public User addUser(String username, String password) {
 		User newUser = new User(username, password);
 		this.users.add(newUser);
+		return newUser;
 	}
 	public Employer addEmployer(String username) {
 		Employer newUser = new Employer(username);
 		this.employers.add(newUser);
-		System.out.print(employers);
+
 		return newUser;
 	}
 	public void addSkill(String skillname) {

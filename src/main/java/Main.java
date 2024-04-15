@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import models.Employer;
+import models.User;
 import models.ViewTransitionalModel;
 import models.allPagesModel;
 public class Main extends Application {
@@ -33,11 +34,14 @@ public class Main extends Application {
 		model.addSkill("Java");
 		model.addUser("Ben", "The greatest philosopher in the Western world");
 		model.addUser("Noah", "From the Southeastern U.S.");
-		model.addUser("Johnson", "an unusual man");
+		User johnson = model.addUser("Johnson", "an unusual man");
+		
+		
 		
 		Employer Acme = model.addEmployer("Acme");
 		
 		model.addJob("matress tester", "sleep", Acme);
+		model.addPost("I just really like computer science", "I just really like computer science", johnson);
 	}
 	public static void main(String [] args){
 		launch(args);
