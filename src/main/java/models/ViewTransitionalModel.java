@@ -139,11 +139,11 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 		// TODO Auto-generated method stub
 		//System.out.println("reached");
 		FXMLLoader loader = new FXMLLoader();
-		System.out.println((loader.getController())==null);
+		//System.out.println((loader.getController())==null);
 		//System.out.println(loader.getController())
 		loader.setLocation(ViewTransitionalModel.class.getResource("../View/editProfile.fxml"));
 		URL url = loader.getLocation();
-		System.out.println(url);
+		//System.out.println(url);
 		//loader.setLocation(ViewTransitionalModel.class.getResource("../View/Login.fxml"));
 		try {
 			Node view = loader.load();
@@ -165,7 +165,7 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 		//loader.setLocation(ViewTransitionalModel.class.getResource("../View/editProfile.fxml"));
 		loader.setLocation(ViewTransitionalModel.class.getResource("../View/login.fxml"));
 		URL url = loader.getLocation();
-		System.out.println(url);
+		//System.out.println(url);
 		try {
 			Node view = loader.load();
 			//System.out.println("reached1");

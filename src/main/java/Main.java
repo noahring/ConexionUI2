@@ -33,9 +33,12 @@ public class Main extends Application {
 	public void prepopulate(allPagesModel model) {
 		model.addSkill("Python");
 		model.addSkill("Java");
-		model.addUser("Ben", "The greatest philosopher in the Western world");
-		model.addUser("Noah", "From the Southeastern U.S.");
-		User johnson = model.addUser("Johnson", "an unusual man");
+		User ben = model.addUser("Ben", "The greatest philosopher in the Western world");
+		ben.setPassword("12345");
+		User noah = model.addUser("Noah", "From the Southeastern U.S.");
+		noah.setPassword("12345");
+		User johnson =johnson = model.addUser("Johnson", "an unusual man");
+		johnson.setPassword("12345");
 		
 		
 		
