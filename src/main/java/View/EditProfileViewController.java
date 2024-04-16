@@ -5,10 +5,43 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import models.Post;
+import models.Skill;
+import models.User;
 import models.ViewTransitionalModel;
 import models.allPagesModel;
 public class EditProfileViewController
+
 {
+	User user;
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public allPagesModel getModel() {
+		return model;
+	}
+
+	public void setModel(allPagesModel model) {
+		this.model = model;
+		this.skillList.setItems(user.getSkills());
+		this.postList.setItems(user.getPosts());
+		this.nameBox.setText(user.getUsername());
+		this.bioBox.setText(user.getBio());
+	}
+
+	public ViewTransitionalModel getViewModel() {
+		return viewModel;
+	}
+
+	public void setViewModel(ViewTransitionalModel viewModel) {
+		this.viewModel = viewModel;
+	}
+
 	allPagesModel model;
 	ViewTransitionalModel viewModel;
     @FXML
@@ -30,10 +63,10 @@ public class EditProfileViewController
     private TextField nameBox;
 
     @FXML
-    private ListView<?> postList;
+    private ListView<Post> postList;
 
     @FXML
-    private ListView<?> skillList;
+    private ListView<Skill> skillList;
 
     @FXML
     void onClickCreatePostButton(ActionEvent event) {
@@ -48,7 +81,10 @@ public class EditProfileViewController
     @FXML
     void onClickApplyButton(ActionEvent event) {
     	String username = nameBox.textProperty().get();
-    	String password = bioBox.textProperty().get();
+    	String bio = bioBox.textProperty().get();
+    	user.setBio(bio);
+    	viewModel.showPrivateProfile(user);
+    	
     }
 
     @FXML

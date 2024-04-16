@@ -7,6 +7,7 @@ import View.AllEmployersViewController;
 import View.AllJobsViewController;
 import View.AllSkillsViewController;
 import View.AllUsersViewController;
+import View.EditProfileViewController;
 import View.LoginViewController;
 import View.privateProfileController;
 import javafx.fxml.FXMLLoader;
@@ -108,16 +109,20 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 
 
 	@Override
-	public void showPrivateProfile() {
+	public void showPrivateProfile(User user) {
 		// TODO Auto-generated method stub
 		FXMLLoader loader = new FXMLLoader();
-		
+		if(user==null) {
+			changetoLoginView();
+			return;
+		}
 		loader.setLocation(ViewTransitionalModel.class.getResource("../View/privateProfile.fxml"));
 		try {
 			Node view = loader.load();
 			mainview.setCenter(view);
 			privateProfileController cont = loader.getController();
 			System.out.println((cont==null));
+			cont.setUser(user);
 			cont.setModel(model);
 			cont.setViewModel(this);
 			
@@ -136,23 +141,18 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 
 
 	@Override
-	public void changetoEditView() {
-		// TODO Auto-generated method stub
-		//System.out.println("reached");
+	public void changetoEditView(User user) {
 		FXMLLoader loader = new FXMLLoader();
-		//System.out.println((loader.getController())==null);
-		//System.out.println(loader.getController())
 		loader.setLocation(ViewTransitionalModel.class.getResource("../View/editProfile.fxml"));
 		URL url = loader.getLocation();
-		//System.out.println(url);
-		//loader.setLocation(ViewTransitionalModel.class.getResource("../View/Login.fxml"));
 		try {
 			Node view = loader.load();
 			mainview.setCenter(view);
-			//privateProfileController cont = loader.getController();
-			//cont.setViewModel(this);
+			EditProfileViewController cont = loader.getController();
+			cont.setUser(user);
+			cont.setModel(model);
+			cont.setViewModel(this);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -176,6 +176,7 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 			//System.out.println("reached");
 			cont.setViewModel(this);
 			
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -189,8 +190,12 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 			User current = model.getUsers().get(i);
 			if((current.getUsername().equals(username)) && (current.getPassword().equals(password))) {
 				found = true;
+				showPrivateProfile(current);
 			}
 		}
-		System.out.println(found);
+		if(found==false) {
+			showPrivateProfile(null);
+			model.loggedIn= null;
+		}
 	}
 }

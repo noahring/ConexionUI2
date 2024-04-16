@@ -8,16 +8,23 @@ public class User {
 	public String toString() {
 		return username;
 	}
-
 	String username;
 	String password;
+	String bio;
+	public String getBio() {
+		return bio;
+	}
+
+	public void setBio(String bio) {
+		this.bio = bio;
+	}
 	ObservableList<Skill> skills = FXCollections.observableArrayList();
 	ObservableList<Post> posts = FXCollections.observableArrayList();	
 	//constructor
-	public User(String username, String password) {
+	public User(String username, String bio) {
 		super();
 		this.username = username;
-		this.password = password;
+		this.bio = bio;
 		
 	}
 	

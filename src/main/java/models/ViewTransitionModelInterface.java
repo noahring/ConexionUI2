@@ -9,11 +9,11 @@ public interface ViewTransitionModelInterface {
 	public void showAllUsers();
 	public void showAllSkills();
 	public void showAllPosts();
-	public void showPrivateProfile();
+	public void showPrivateProfile(User user);
 	public void login(String username, String password);
 	//Edit Pages 
 	
-	public void changetoEditView();
+	public void changetoEditView(User user);
 	public void changetoLoginView();
 
 }

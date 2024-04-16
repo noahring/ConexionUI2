@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import models.Employer;
+import models.Skill;
 import models.User;
 import models.ViewTransitionalModel;
 import models.allPagesModel;
@@ -22,7 +23,9 @@ public class Main extends Application {
 		MainController cont = loader.getController();
 		
 		ViewTransitionalModel vm = new ViewTransitionalModel(view, model);
+		vm.changetoLoginView();
 		cont.setModel(vm);
+		cont.setMainModel(model);
 		
 		
 		Scene s = new Scene(view);
@@ -31,9 +34,10 @@ public class Main extends Application {
 	}
 	
 	public void prepopulate(allPagesModel model) {
-		model.addSkill("Python");
-		model.addSkill("Java");
+		Skill python =model.addSkill("Python");
+		Skill java = model.addSkill("Java");
 		User ben = model.addUser("ben", "The greatest philosopher in the Western world");
+		ben.addSkill(python);
 		ben.setPassword("12345");
 		User noah = model.addUser("noah", "From the Southeastern U.S.");
 		noah.setPassword("12345");

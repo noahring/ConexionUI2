@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import models.ViewTransitionalModel;
 import models.allPagesModel;
 import models.Skill;
+import models.User;
 import models.Post;
 
 
@@ -16,18 +17,33 @@ public class privateProfileController {
 	
 	allPagesModel model;
 	ViewTransitionalModel viewModel;
+	User user;
 	
 	public void setModel(allPagesModel model) {
-		
 		this.model = model;
-		profileSkills.setItems(model.getSkills());
-		profileRecentPost.setItems(model.getPosts());
-		profileName.setText("Johnson");
-		profileBio.setText("I love computer science");
-		
+		profileSkills.setItems(user.getSkills());
+		profileRecentPost.setItems(user.getPosts());
+		profileName.setText(user.getUsername());
+		profileBio.setText(user.getBio());
 	}
 
-    @FXML
+    public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public allPagesModel getModel() {
+		return model;
+	}
+
+	public ViewTransitionalModel getViewModel() {
+		return viewModel;
+	}
+
+	@FXML
     private Button editPrivateProfile;
 
     @FXML
@@ -56,7 +72,7 @@ public class privateProfileController {
     
     @FXML
     void onClickEditButton(ActionEvent event) {
-    	viewModel.changetoEditView();
+    	viewModel.changetoEditView(user);
 //    	if (viewModel != null) {
 //             // Call changetoEditView() on the viewModel instance
 //    		break;

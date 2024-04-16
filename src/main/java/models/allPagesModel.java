@@ -15,7 +15,13 @@ public class allPagesModel {
 	ObservableList<Post> posts = FXCollections.observableArrayList();
 	User loggedIn;
 	public allPagesModel() {
-		
+		loggedIn = null;
+	}
+	public User getLoggedIn() {
+		return loggedIn;
+	}
+	public void setLoggedIn(User loggedIn) {
+		this.loggedIn = loggedIn;
 	}
 	//
 	public ObservableList<User> getUsers() {
@@ -50,19 +56,22 @@ public class allPagesModel {
 
 		return newUser;
 	}
-	public void addSkill(String skillname) {
+	public Skill addSkill(String skillname) {
 		Skill newSkill = new Skill(skillname);
 		this.skills.add(newSkill);
+		return newSkill;
 	}
-	public void addPost(String postName, String postText, User postAuthor) {
+	public Post addPost(String postName, String postText, User postAuthor) {
 		Post newPost = new Post(postName, postText, postAuthor);
 		this.posts.add(newPost);
 		postAuthor.posts.add(newPost);
+		return newPost;
 	}
-	public void addJob(String postName, String postText, Employer postAuthor) {
+	public Job addJob(String postName, String postText, Employer postAuthor) {
 		Job newJob = new Job(postName, postText, postAuthor);
 		this.jobPosts.add(newJob);
 		postAuthor.jobs.add(newJob);
+		return newJob;
 	}
 	
 //	public void changetoEditView() {

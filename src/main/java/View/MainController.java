@@ -2,11 +2,13 @@ package View;
 
 import javafx.fxml.FXML;
 import models.ViewTransitionModelInterface;
+import models.allPagesModel;
 import javafx.event.ActionEvent;
 public class MainController {
 	
 	
 	ViewTransitionModelInterface model;
+	allPagesModel mainModel;
 	
 	public void setModel(ViewTransitionModelInterface newModel) {
 		model = newModel;
@@ -33,11 +35,19 @@ public class MainController {
 
     @FXML
     void onClickMyProfile(ActionEvent event) {
-    	model.showPrivateProfile();
+    	model.showPrivateProfile(mainModel.getLoggedIn());
     	System.out.println("clicked my profile");
     }
 
-    @FXML
+    public allPagesModel getMainModel() {
+		return mainModel;
+	}
+
+	public void setMainModel(allPagesModel mainModel) {
+		this.mainModel = mainModel;
+	}
+
+	@FXML
     void onClickPosts(ActionEvent event) {
     	model.showAllPosts();
     	System.out.println("clicked posts");
