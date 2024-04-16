@@ -10,7 +10,7 @@ public interface ViewTransitionModelInterface {
 	public void showAllSkills();
 	public void showAllPosts();
 	public void showProfile();
-	
+	public void login(String username, String password);
 	//Edit Pages 
 	
 	public void changetoEditView();

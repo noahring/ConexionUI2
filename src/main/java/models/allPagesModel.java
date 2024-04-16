@@ -13,7 +13,7 @@ public class allPagesModel {
 	ObservableList<Job> jobPosts = FXCollections.observableArrayList();
 	ObservableList<Skill> skills = FXCollections.observableArrayList();
 	ObservableList<Post> posts = FXCollections.observableArrayList();
-	
+	User loggedIn;
 	public allPagesModel() {
 		
 	}

@@ -181,6 +181,8 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 		}
 	
 		}
-	
-
+	@Override
+	public void login(String username, String Password) {
+		
+	}
 }
