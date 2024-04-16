@@ -33,7 +33,7 @@ public class MainController {
 
     @FXML
     void onClickMyProfile(ActionEvent event) {
-    	model.showProfile();
+    	model.showPrivateProfile();
     	System.out.println("clicked my profile");
     }
 

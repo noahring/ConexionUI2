@@ -32,7 +32,7 @@
                   <Font size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="emailBox" alignment="CENTER" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
+            <TextField fx:id="emailBox" maxWidth="200.0" minWidth="10.0" prefWidth="100.0" />
             <Label text="Password">
                <font>
                   <Font size="23.0" />

@@ -7,6 +7,7 @@ import View.AllEmployersViewController;
 import View.AllJobsViewController;
 import View.AllSkillsViewController;
 import View.AllUsersViewController;
+import View.LoginViewController;
 import View.privateProfileController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -107,7 +108,7 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 
 
 	@Override
-	public void showProfile() {
+	public void showPrivateProfile() {
 		// TODO Auto-generated method stub
 		FXMLLoader loader = new FXMLLoader();
 		
@@ -171,7 +172,7 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 			//System.out.println("reached1");
 			mainview.setCenter(view);
 			
-			privateProfileController cont = loader.getController();
+			LoginViewController cont = loader.getController();
 			//System.out.println("reached");
 			cont.setViewModel(this);
 			
@@ -182,7 +183,14 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 	
 		}
 	@Override
-	public void login(String username, String Password) {
-		
+	public void login(String username, String password) {
+		boolean found = false;
+		for(int i = 0; i< model.getUsers().size(); i++) {
+			User current = model.getUsers().get(i);
+			if((current.getUsername().equals(username)) && (current.getPassword().equals(password))) {
+				found = true;
+			}
+		}
+		System.out.println(found);
 	}
 }
