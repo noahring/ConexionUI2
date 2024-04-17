@@ -191,6 +191,7 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 			if((current.getUsername().equals(username)) && (current.getPassword().equals(password))) {
 				found = true;
 				showPrivateProfile(current);
+				model.loggedIn=current;
 			}
 		}
 		if(found==false) {
