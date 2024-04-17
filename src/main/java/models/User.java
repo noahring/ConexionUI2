@@ -14,20 +14,39 @@ public class User {
 	public String getBio() {
 		return bio;
 	}
-
 	public void setBio(String bio) {
 		this.bio = bio;
 	}
 	ObservableList<Skill> skills = FXCollections.observableArrayList();
 	ObservableList<Post> posts = FXCollections.observableArrayList();	
+	ObservableList<Job> jobs = FXCollections.observableArrayList();
+	ObservableList<User> users = FXCollections.observableArrayList();
+	ObservableList<Employer> employers = FXCollections.observableArrayList();
+	
+	public ObservableList<User> getUsers() {
+		return users;
+	}
+	public void setUsers(ObservableList<User> users) {
+		this.users = users;
+	}
+	public ObservableList<Employer> getEmployers() {
+		return employers;
+	}
+	public void setEmployers(ObservableList<Employer> employers) {
+		this.employers = employers;
+	}
+	public ObservableList<Job> getJobs() {
+		return jobs;
+	}
+	public void setJobs(ObservableList<Job> jobs) {
+		this.jobs = jobs;
+	}
 	//constructor
 	public User(String username, String bio) {
 		super();
 		this.username = username;
-		this.bio = bio;
-		
+		this.bio = bio;	
 	}
-	
 	//getters and setters
 	public String getUsername() {
 		return username;
@@ -53,9 +72,15 @@ public class User {
 	public void setPosts(ObservableList<Post> posts) {
 		this.posts = posts;
 	}
-	
 	//adders
 	public void addSkill(Skill skill) {
 		this.skills.add(skill);
 	}
+	public void addJob(Job job) {
+		this.jobs.add(job);
+	}
+	public void addUser(User user) {
+		this.users.add(user);
+	}
+	
 }

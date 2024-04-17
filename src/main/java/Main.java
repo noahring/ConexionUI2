@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import models.Employer;
+import models.Job;
 import models.Skill;
 import models.User;
 import models.ViewTransitionalModel;
@@ -47,9 +48,10 @@ public class Main extends Application {
 		
 		
 		Employer Acme = model.addEmployer("Acme");
-		
-		model.addJob("matress tester", "sleep", Acme);
+		Job gladiator = model.addJob("gladiator", "Glorious battle", Acme);
+		Job matress = model.addJob("matress tester", "sleep", Acme);
 		model.addPost("I just really like computer science", "I just really like computer science", johnson);
+		ben.addJob(matress);
 	}
 	public static void main(String [] args){
 		launch(args);

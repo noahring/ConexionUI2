@@ -199,4 +199,5 @@ public class ViewTransitionalModel implements ViewTransitionModelInterface {
 			model.loggedIn= null;
 		}
 	}
+	
 }
