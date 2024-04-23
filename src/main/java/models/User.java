@@ -82,5 +82,7 @@ public class User {
 	public void addUser(User user) {
 		this.users.add(user);
 	}
-	
+	public void addEmployer(Employer employer) {
+		this.employers.add(employer);
+	}
 }

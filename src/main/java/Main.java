@@ -48,10 +48,13 @@ public class Main extends Application {
 		
 		
 		Employer Acme = model.addEmployer("Acme");
+		Employer notAcme =model.addEmployer("notAcme");
 		Job gladiator = model.addJob("gladiator", "Glorious battle", Acme);
 		Job matress = model.addJob("matress tester", "sleep", Acme);
 		model.addPost("I just really like computer science", "I just really like computer science", johnson);
 		ben.addJob(matress);
+		ben.addEmployer(Acme);
+		ben.addUser(johnson);
 	}
 	public static void main(String [] args){
 		launch(args);

@@ -23,7 +23,9 @@ public class AllJobsViewController {
 
     @FXML
     void onClickShowOnlyMyJobs(ActionEvent event) {
-    	allJobsList.setItems(model.getLoggedIn().getJobs());
+    	if(model.getLoggedIn()!=null) {
+    		allJobsList.setItems(model.getLoggedIn().getJobs());
+    	}
     }
 
 }
